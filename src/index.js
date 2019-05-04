@@ -4,16 +4,19 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { getCountries,  getCountry} from './actions/actions-countries';
 import DevTools from './DevTools';
-
-render(
-    <Provider store={store}>
-	    <div>
-	        <h1>Inicjalizacja projektu</h1>
-	        <DevTools />
-	    </div>
-    </Provider>,
-    document.getElementById('root')
-);
+import { Router, hashHistory } from 'react-router';
+import routes from './routes';
 
 store.dispatch(getCountries());
 store.dispatch(getCountry('first comment'));
+
+
+render(
+    <Provider store={store}>
+    	<div>
+	        <Router history={hashHistory} routes={routes} />
+	        <DevTools />
+    	</div>
+    </Provider>,
+    document.getElementById('root')
+);
