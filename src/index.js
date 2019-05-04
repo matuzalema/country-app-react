@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import { getCountries } from './actions/actions-countries';
+import { getCountries,  getCountry} from './actions/actions-countries';
 import DevTools from './DevTools';
 
 render(
@@ -15,5 +15,5 @@ render(
     document.getElementById('root')
 );
 
-store.dispatch(getCountries('first comment'));
-store.dispatch(getCountries('second comment'));
+store.dispatch(getCountries());
+store.dispatch(getCountry('first comment'));
