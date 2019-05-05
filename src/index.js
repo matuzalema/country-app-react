@@ -7,9 +7,6 @@ import DevTools from './DevTools';
 import { Router, hashHistory } from 'react-router';
 import routes from './routes';
 
-store.dispatch(getCountries());
-store.dispatch(getCountry('first comment'));
-
 
 render(
     <Provider store={store}>
